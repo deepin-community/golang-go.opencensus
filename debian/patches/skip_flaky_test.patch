@@ -1,0 +1,12 @@
+Index: golang-go.opencensus/stats/view/worker_test.go
+===================================================================
+--- golang-go.opencensus.orig/stats/view/worker_test.go	2021-05-14 22:49:44.463748299 +0200
++++ golang-go.opencensus/stats/view/worker_test.go	2021-05-14 23:07:57.578785283 +0200
+@@ -122,6 +122,7 @@
+ }
+ 
+ func Test_Worker_MultiExport(t *testing.T) {
++	t.Skip("Skipping flaky MultiExport test. See Debian Bug#988250.")
+ 	restart()
+ 
+ 	// This test reports the same data for the default worker and a secondary

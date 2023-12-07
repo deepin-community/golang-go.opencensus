@@ -1,4 +1,11 @@
 #!/usr/bin/make -f
 
+export DH_GOLANG_EXCLUDES := examples internal/check
+export DH_GOLANG_EXCLUDES_ALL := 0
+
 %:
-	dh $@
+	dh $@ --buildsystem=golang --with=golang
+
+override_dh_fixperms:
+	dh_fixperms
+	chmod a-x debian/golang-go.opencensus-dev/usr/share/gocode/src/go.opencensus.io/plugin/ochttp/testdata/download-test-cases.sh
