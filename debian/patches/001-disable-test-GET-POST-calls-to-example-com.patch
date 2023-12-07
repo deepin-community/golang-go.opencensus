@@ -1,0 +1,48 @@
+Description: Disable test GET and POST calls to https://example.com/
+ TestAgainstSpecs/Successful_GET_call_to_https://example.com and
+ TestAgainstSpecs/Successful_POST_call_to_https://example.com do not work
+ without network connection.
+Author: Anthony Fok <foka@debian.org>
+Origin: vendor
+Forwarded: not-needed
+Last-Update: 2019-07-28
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/plugin/ochttp/testdata/http-out-test-cases.json
++++ b/plugin/ochttp/testdata/http-out-test-cases.json
+@@ -1,35 +1,5 @@
+ [
+     {
+-      "name": "Successful GET call to https://example.com",
+-      "method": "GET",
+-      "url": "https://example.com/",
+-      "spanName": "/",
+-      "spanStatus": "OK",
+-      "spanKind": "Client",
+-      "spanAttributes": {
+-        "http.path": "/",
+-        "http.method": "GET",
+-        "http.host": "example.com",
+-        "http.status_code": "200",
+-        "http.url": "https://example.com/"
+-      }
+-    },
+-    {
+-      "name": "Successfully POST call to https://example.com",
+-      "method": "POST",
+-      "url": "https://example.com/",
+-      "spanName": "/",
+-      "spanStatus": "OK",
+-      "spanKind": "Client",
+-      "spanAttributes": {
+-        "http.path": "/",
+-        "http.method": "POST",
+-        "http.host": "example.com",
+-        "http.status_code": "200",
+-        "http.url": "https://example.com/"
+-      }
+-    },
+-    {
+       "name": "Name is populated as a path",
+       "method": "GET",
+       "url": "http://{host}:{port}/path/to/resource/",
