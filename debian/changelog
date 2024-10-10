@@ -1,3 +1,13 @@
+golang-go.opencensus (0.24.0-2) unstable; urgency=medium
+
+  * Team upload
+  * d/control:
+    - Update Standards-Version to 4.7.0 (no changes needed)
+    - Update Build-Depends and Depends to use
+      golang-github-golang-protobuf-1-5-dev
+
+ -- Mathias Gibbens <gibmat@debian.org>  Sun, 28 Jul 2024 10:51:57 +0000
+
 golang-go.opencensus (0.24.0-1) unstable; urgency=medium
 
   * New upstream version 0.24.0
